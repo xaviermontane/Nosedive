@@ -4,9 +4,8 @@ from sprite import Jimmy, Building
 from ButtonClass import Button
 
 # Define screen resolution
-screen_width = 700
-screen_height = 500
-screen = pygame.display.set_mode((screen_width, screen_height))
+width, height = 700, 500
+screen = pygame.display.set_mode((width, height))
 pygame.display.set_caption("Nosedive")
 
 # Define some colors
@@ -78,26 +77,28 @@ while running:
 
     pygame.display.update()
 
+    direction = "Stop"
+
     # Keyboard inputs
     if event.type == pygame.KEYUP:
       if event.key == pygame.K_UP:
-        character = "Stop"
+        direction = "Stop"
       elif event.key == pygame.K_DOWN:
-        character = "Stop"
+        direction = "Stop"
       elif event.key == pygame.K_LEFT:
-        character = "Stop"
+        direction = "Stop"
       elif event.key == pygame.K_RIGHT:
-        character = "Stop"
+        direction = "Stop"
     
     if event.type == pygame.KEYDOWN:
       if event.key == pygame.K_UP or event.key == pygame.K_SPACE:
-        character = "Up"
+        direction = "Jump"
       elif event.key == pygame.K_DOWN:
-        character = "Down"
+        direction = "Down"
       elif event.key == pygame.K_LEFT:
-        character = "Left"
+        direction = "Left"
       elif event.key == pygame.K_RIGHT:
-        character = "Right"
+        direction = "Right"
       elif event.key == pygame.K_f:
         print("You payed respects...")
 
